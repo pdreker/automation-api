@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "automation-api"
+version = "0.1.0"
+description = ""
+authors = ["Patrick Dreker <patrick@dreker.de>"]
+readme = "README.md"
+packages = [{include = "automation_api"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.95.0"
+uvicorn = "^0.20.0"
+paho-mqtt = "^1.6.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.12.0"
+flake8 = "^6.0.0"
+flake8-comprehensions = "^3.10.1"
+flake8-bugbear = "^23.3.12"
+mypy = "^0.990"
+isort = "^5.12.0"
+pytest = "^7.2.2"
+Flake8-pyproject = "^1.2.2"
+bandit = "^1.7.4"
+
+
+[tool.flake8]
+ignore = ['E203', 'W503']
+max-line-length = 100
+exclude = [".git", "__pycache__", "docs/conf.py"]
+count = true
+
+[tool.black]
+line-length = 100
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
